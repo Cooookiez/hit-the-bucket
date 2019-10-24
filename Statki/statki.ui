@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>660</width>
-    <height>660</height>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Statki</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="graphicsView">
+   <widget class="Ocean" name="gv_ocean_local">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView_2">
+   <widget class="Ocean" name="gv_ocean_remote">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -34,68 +34,25 @@
      </rect>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView_3">
+   <widget class="QGraphicsView" name="gv_local_ships">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>340</y>
-      <width>124</width>
-      <height>221</height>
+      <width>120</width>
+      <height>200</height>
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_ready">
+   <widget class="QGraphicsView" name="gv_remote_ships">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>460</y>
-      <width>141</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Jestem Gotowy!</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
+      <x>520</x>
       <y>340</y>
-      <width>170</width>
-      <height>108</height>
+      <width>120</width>
+      <height>200</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>IP:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Port:</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QLineEdit" name="lineEdit"/>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
-       </item>
-      </layout>
-     </item>
-    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -110,6 +67,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Ocean</class>
+   <extends>QGraphicsView</extends>
+   <header>ocean.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
