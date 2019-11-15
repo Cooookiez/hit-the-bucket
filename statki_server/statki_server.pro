@@ -1,3 +1,6 @@
+
+# tutorial: http://www.tektips.in/qt-c-plus-plus-network-programming-video-tutorial.aspx.aspx
+
 QT       += core gui
 QT       += network
 
@@ -18,16 +21,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    ocean.cpp \
-    statki.cpp \
-    tests/test_01.cpp
+    mainwindow.cpp \
+    server.cpp
 
 HEADERS += \
-    ocean.h \
-    statki.h
+    mainwindow.h \
+    server.h
 
 FORMS += \
-    statki.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -6,6 +6,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsItem>
+#include <QTcpSocket>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Statki; }
@@ -18,13 +19,18 @@ class Statki : public QMainWindow
 public:
     Statki(QWidget *parent = nullptr);
     ~Statki();
+    QTcpSocket *socket;
+
+private slots:
+    void on_btn_Connect_clicked();
 
 private:
     Ui::Statki *ui;
-
     QGraphicsScene *scene;
     QGraphicsEllipseItem *ellipse;
     QGraphicsRectItem *rectangle;
     QGraphicsTextItem *text;
+
+    void displayError(QAbstractSocket::SocketError socketError);
 };
 #endif // STATKI_H
