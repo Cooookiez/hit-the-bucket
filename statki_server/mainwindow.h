@@ -18,7 +18,7 @@ public:
     void addMsg(QString Msg);
 //    Server *server;
 //    Server::Server *myServer;
-    Server *server;
+//    Server *server;
 
 
 private slots:

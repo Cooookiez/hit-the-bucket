@@ -17,14 +17,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_start_clicked()
 {
-    myServer = new Server(this);
-    auto port = quint16( ui->textEdit_port->toPlainText().toInt( ) );
-    if( myServer->listen(QHostAddress::Any, port) )
-    {
-        qDebug() << "Server could not start!";
-    }
-    else
-    {
-        qDebug() << "Server started!";
-    }
+//    myServer = new Server(this);
+//    auto port = quint16( ui->textEdit_port->toPlainText().toInt( ) );
+//    if( myServer->listen(QHostAddress::Any, port) )
+//    {
+//        qDebug() << "Server could not start!";
+//    }
+//    else
+//    {
+//        qDebug() << "Server started!";
+//    }
 }
