@@ -8,24 +8,39 @@ Statki::Statki(QWidget *parent): QMainWindow(parent), ui(new Ui::Statki){
 
     scene = new QGraphicsScene(this);
     ui->gv_ocean_local->setScene(scene);
-//    ui->gv_ocean_local->setSceneRect(0 ,0 ,20, 40);
+    ui->gv_ocean_local->setSceneRect(0 ,0 ,30, 30);
 
     QBrush greenBrush(Qt::green);
     QBrush redBrush(Qt::red);
     QPen blackPen(Qt::black);
 
     blackPen.setWidth(2);
+    //QGraphicsRectItem group[64];
+    rectangle = new QGraphicsRectItem(0,0,37.5,37.5);
+    rectangle->setPos(-133.5,-133.5);
+    scene->addItem(rectangle);
+    auto rectangle2 = new QGraphicsRectItem(0,0,37.5,37.5);
+    rectangle2->setPos(-133.5,-96);
+    scene->addItem(rectangle2);
+    auto rectangle3 = new QGraphicsRectItem(0,0,37.5,37.5);
+    rectangle3->setPos(-133.5,-58.5);
+    scene->addItem(rectangle3);
 
-    rectangle = scene->addRect(0, 5, 10, 5, blackPen, redBrush);
 
 
-//    scene->setSceneRect(0, 0, qreal(20), qreal(40));
+//rectangle = scene->addRect(1000,1000, 37.5, 37.5, blackPen, redBrush);
+
+
+
+
+
+      //scene->setSceneRect(0, 0, qreal(20), qreal(40));
 //    rectangle = scene->addRect(0, 0, 5, 10, redBrush, greenBrush);
 
 //    scene = new QGraphicsScene(this);
 //    ui->gv_ocean_local->setScene(scene);
-    qreal w = scene->width();
-    qreal width = scene->sceneRect().width();
+    //qreal w = scene->width();
+    //qreal width = scene->sceneRect().width();
 //    QString ww = QString::number(w);
 
 //    QBrush greenBrush(Qt::green);
