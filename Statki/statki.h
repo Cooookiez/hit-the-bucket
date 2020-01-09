@@ -20,7 +20,6 @@ class Statki : public QMainWindow
 public:
     Statki(QWidget *parent = nullptr);
     ~Statki();
-    QTcpSocket *socket;
 
 private slots:
     void on_btn_Connect_clicked();
@@ -33,7 +32,5 @@ private:
     QGraphicsEllipseItem *ellipse;
     QGraphicsRectItem *rectangle;
     QGraphicsTextItem *text;
-
-    void displayError(QAbstractSocket::SocketError socketError);
 };
 #endif // STATKI_H
