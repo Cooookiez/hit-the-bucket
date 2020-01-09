@@ -6,5 +6,6 @@ AKA gra w statki 🚤
 
 - Versja c++: 17
 - Robi cmake
-- Tworzy Testy jednostkowe
+- Tworzy Testy jednostkowe żeby było łatwiej (można wtedy testować też przez githuba)
 - uywac qt? (qtcreator)
+- Firebase

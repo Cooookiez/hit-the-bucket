@@ -1,6 +1,8 @@
 #include "statki.h"
 #include "ui_statki.h"
 #include <QMessageBox>
+#include <QSound>
+#include <QtMultimedia/QMediaPlayer>
 
 Statki::Statki(QWidget *parent): QMainWindow(parent), ui(new Ui::Statki){
 
@@ -49,9 +51,24 @@ Statki::~Statki(){
 
 }
 
+void Statki::play_sound()
+{
+    //QSound dzwiek("Ring06.wav");
+    //dzwiek.play();
+    QSound::play("c:/wywal/Ring06.wav");
+}
+void Statki::play_sound_1()
+{
+    QMediaPlayer *player = new QMediaPlayer;
+    player->setMedia(QUrl::fromLocalFile("c:/wywal/Ring06.wav"));
+    player->setVolume(50);
+    player->play();
+}
 
 void Statki::on_btn_Connect_clicked()
 {
+    //play_sound();
+    play_sound_1();
     auto host = ui->textEdit_IP->toPlainText();
     auto port = quint16( ui->textEdit_Port->toPlainText().toInt() );
     socket->connectToHost(host, port);

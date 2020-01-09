@@ -8,6 +8,7 @@
 #include <QGraphicsItem>
 #include <QTcpSocket>
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class Statki; }
 QT_END_NAMESPACE
@@ -23,6 +24,8 @@ public:
 
 private slots:
     void on_btn_Connect_clicked();
+    void play_sound();
+    void play_sound_1();
 
 private:
     Ui::Statki *ui;
