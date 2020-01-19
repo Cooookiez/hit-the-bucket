@@ -18,15 +18,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
+    menu.cpp \
     ocean.cpp \
     statki.cpp \
     tests/test_01.cpp
 
 HEADERS += \
+    menu.h \
     ocean.h \
     statki.h
 
 FORMS += \
+    menu.ui \
     statki.ui
 
 # Default rules for deployment.
