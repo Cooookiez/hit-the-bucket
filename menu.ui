@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>menu</class>
+ <widget class="QDialog" name="menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>663</width>
+    <height>603</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>170</y>
+     <width>241</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="font">
+       <font>
+        <family>URW Gothic L</family>
+        <pointsize>15</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	background-color:#ffffff;
+	color:#006699;
+	border-radius: 20px;
+	height: 50px;
+}
+
+QPushButton:hover
+{
+	background-color:#006699;
+	color:white;
+	font-weight: bold;
+}</string>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="font">
+       <font>
+        <family>URW Gothic L</family>
+        <pointsize>15</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	background-color:#ffffff;
+	color:#006699;
+	border-radius: 20px;
+	height: 50px;
+}
+
+QPushButton:hover
+{
+	background-color:#006699;
+	color:white;
+	font-weight: bold;
+}</string>
+      </property>
+      <property name="text">
+       <string>Autorzy</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="font">
+       <font>
+        <family>URW Gothic L</family>
+        <pointsize>15</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	background-color:#ffffff;
+	color:#006699;
+	border-radius: 20px;
+	height: 50px;
+}
+
+QPushButton:hover
+{
+	background-color:#006699;
+	color:white;
+	font-weight: bold;
+}</string>
+      </property>
+      <property name="text">
+       <string>Licencja</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>16</y>
+     <width>641</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>URW Gothic L</family>
+        <pointsize>60</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel 
+{
+	color: white;
+}</string>
+      </property>
+      <property name="text">
+       <string>S T A T K I</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
