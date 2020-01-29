@@ -21,10 +21,10 @@ int main()
     int _i;
     float _x, _y, tmp_vx, tmp_vy, tg;
 
-    int p_width = 30; // szerokosc platformy (tarczy)
-    int p_hieght = 150; // wysokosc platformy (tarczy)
+    int p_width = 60; // szerokosc platformy (tarczy)
+    int p_hieght = 300; // wysokosc platformy (tarczy)
     float p_dx = 12; // szypkosc platform (tarczy)
-    int margin = 20; // odleglość platrofmy (tarczy) od sciany (brzegu)
+    int margin = 75; // odleglość platrofmy (tarczy) od sciany (brzegu)
     int score[2] = {0, 0};
 
     sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Hit The Bucket");
@@ -32,6 +32,25 @@ int main()
 
     sf::Font roboto;
     roboto.loadFromFile("assets/fonts/Roboto-Regular.ttf");
+
+    // textury
+    sf::Texture sea_texture;
+    sea_texture.setSmooth(true);
+    sea_texture.loadFromFile("assets/images/main_background.png");
+
+    sf::Texture ship_left_texture;
+    ship_left_texture.setSmooth(true);
+    ship_left_texture.loadFromFile("assets/images/statek-lewy.png");
+
+    sf::Texture ship_right_texture;
+    ship_right_texture.setSmooth(true);
+    ship_right_texture.loadFromFile("assets/images/statek-prawy.png");
+
+    // sea
+    sf::RectangleShape sea;
+    sea.setPosition(sf::Vector2f(0, UI_TOP_HEIGHT));
+    sea.setSize(sf::Vector2f(WIDTH, HEIGHT - UI_TOP_HEIGHT - UI_BOT_HEIGHT));
+    sea.setTexture(&sea_texture);
 
     // UI gurne
     sf::RectangleShape ui_top;
@@ -76,12 +95,14 @@ int main()
     sf::RectangleShape platforma[2]; // 0 - lewy; 1 - prawy
 
     platforma[0].setPosition(sf::Vector2f(margin, (HEIGHT-p_hieght)/2 ));
-    platforma[0].setFillColor(sf::Color::Red);
+    // platforma[0].setFillColor(sf::Color::Red);
     platforma[0].setSize(sf::Vector2f(p_width, p_hieght));
+    platforma[0].setTexture(&ship_left_texture);
 
     platforma[1].setPosition(sf::Vector2f(WIDTH-p_width-margin, (HEIGHT-p_hieght)/2 ));
-    platforma[1].setFillColor(sf::Color::Red);
+    // platforma[1].setFillColor(sf::Color::Red);
     platforma[1].setSize(sf::Vector2f(p_width, p_hieght));
+    platforma[1].setTexture(&ship_right_texture);
 
     // pierwszy strzal
     float vx = 12.0, vy = 0.0;
@@ -212,6 +233,8 @@ int main()
 
         //rysuje
         window.clear();
+
+        window.draw(sea);
 
         window.draw(ball);
         window.draw(platforma[0]);

@@ -2,3 +2,5 @@
 hit-the-bucket
 
 main.o
+
+*.DS_Store
