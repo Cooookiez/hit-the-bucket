@@ -19,7 +19,7 @@ int main()
     const int R = 30; //promien kuli (strzały)
 
     int _i;
-    float _x, _y, sin, cos, alpha;
+    float _x, _y, tmp_vx, tmp_vy, tg;
 
     int p_width = 30; // szerokosc platformy (tarczy)
     int p_hieght = 150; // wysokosc platformy (tarczy)
@@ -84,7 +84,7 @@ int main()
     platforma[1].setSize(sf::Vector2f(p_width, p_hieght));
 
     // pierwszy strzal
-    float v = 12.0, vx = 12.0, vy = 0.0;
+    float vx = 12.0, vy = 0.0;
     if(rand()%2){
         vx = -vx;
     }
@@ -115,8 +115,8 @@ int main()
             _y = platforma[0].getPosition().y;
             _y -= p_dx;
 
-            if( _y <= 0 )
-                _y = 0;
+            if( _y <= UI_TOP_HEIGHT )
+                _y = UI_TOP_HEIGHT;
             platforma[0].setPosition(sf::Vector2f(_x, _y));
         }
         else if( sf::Keyboard::isKeyPressed(sf::Keyboard::S) )
@@ -125,8 +125,8 @@ int main()
             _y = platforma[0].getPosition().y;
             _y += p_dx;
 
-            if( _y >= HEIGHT - p_hieght )
-                _y = HEIGHT - p_hieght;
+            if( _y >= HEIGHT - p_hieght - UI_BOT_HEIGHT )
+                _y = HEIGHT - p_hieght - UI_BOT_HEIGHT;
             platforma[0].setPosition(sf::Vector2f(_x, _y));
         }
         // prawa
@@ -136,8 +136,8 @@ int main()
             _y = platforma[1].getPosition().y;
             _y -= p_dx;
 
-            if( _y <= 0 )
-                _y = 0;
+            if( _y <= UI_TOP_HEIGHT )
+                _y = UI_TOP_HEIGHT;
             platforma[1].setPosition(sf::Vector2f(_x, _y));
         }
         else if( sf::Keyboard::isKeyPressed(sf::Keyboard::Down) )
@@ -146,14 +146,15 @@ int main()
             _y = platforma[1].getPosition().y;
             _y += p_dx;
 
-            if( _y >= HEIGHT - p_hieght )
-                _y = HEIGHT - p_hieght;
+            if( _y >= HEIGHT - p_hieght - UI_BOT_HEIGHT )
+                _y = HEIGHT - p_hieght - UI_BOT_HEIGHT;
             platforma[1].setPosition(sf::Vector2f(_x, _y));
         }
         
         // odbija kule jesli trafi na tarcze
         _x = ball.getPosition().x;
         _y = ball.getPosition().y;
+        cout << _x << "\t" << _y <<  "\t|\t" << vx << "\t" << vy << "\t" << endl;
         _x += vx;
         _y += vy;
         ball.setPosition(sf::Vector2f(_x, _y));
@@ -162,12 +163,19 @@ int main()
         {
             ball.setPosition(sf::Vector2f(margin + R, _y));
             vx *= -1;
+            vy += rand()%21-10;
+            vy = vy > 15 ? 15:vy;
+            vy = vy < -15 ? -15:vy;
+
         }
         // prawy
         if( _x > WIDTH - p_width - margin - 2*R && ball.getGlobalBounds().intersects(platforma[1].getGlobalBounds()) )
         {
             ball.setPosition(sf::Vector2f(WIDTH - p_width - margin - 2*R, _y));
             vx *= -1;
+            vy += rand()%21-10;
+            vy = vy > 15 ? 15:vy;
+            vy = vy < -15 ? -15:vy;
         }
 
         // odbija pilke jesli trafi na gurna lub dolna krawec
