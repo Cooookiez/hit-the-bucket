@@ -4,3 +4,13 @@ hit-the-bucket
 main.o
 
 *.DS_Store
+
+CMakeFiles/
+
+cmake_install.cmake
+
+CMakeCache.txt
+
+Makefile
+
+.vscode/

@@ -5,8 +5,7 @@
 #include <string>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-
-using namespace std;
+#include <filesystem>
 
 int main()
 {
@@ -31,20 +30,22 @@ int main()
     window.setFramerateLimit(60);
 
     sf::Font roboto;
-    roboto.loadFromFile("assets/fonts/Roboto-Regular.ttf");
+    roboto.loadFromFile("./hit-the-bucket/assets/fonts/Roboto-Regular.ttf");
+
+    std::cout << "Current path is " << std::filesystem::current_path() << '\n';
 
     // textury
     sf::Texture sea_texture;
     sea_texture.setSmooth(true);
-    sea_texture.loadFromFile("assets/images/main_background.png");
+    sea_texture.loadFromFile("./hit-the-bucket/assets/images/main_background.png");
 
     sf::Texture ship_left_texture;
     ship_left_texture.setSmooth(true);
-    ship_left_texture.loadFromFile("assets/images/statek-lewy.png");
+    ship_left_texture.loadFromFile("./hit-the-bucket/assets/images/statek-lewy.png");
 
     sf::Texture ship_right_texture;
     ship_right_texture.setSmooth(true);
-    ship_right_texture.loadFromFile("assets/images/statek-prawy.png");
+    ship_right_texture.loadFromFile("./hit-the-bucket/assets/images/statek-prawy.png");
 
     // sea
     sf::RectangleShape sea;
@@ -66,8 +67,8 @@ int main()
     score_txt[0].setFillColor(sf::Color::White);
     score_txt[1].setFillColor(sf::Color::White);
 
-    score_txt[0].setString(to_string(score[0]));
-    score_txt[1].setString(to_string(score[1]));
+    score_txt[0].setString(std::to_string(score[0]));
+    score_txt[1].setString(std::to_string(score[1]));
     score_txt[0].setPosition(sf::Vector2f(WIDTH/8*3, UI_TOP_HEIGHT/2-16));
     score_txt[1].setPosition(sf::Vector2f(WIDTH/8*5, UI_TOP_HEIGHT/2-16));
     // separator
@@ -218,7 +219,7 @@ int main()
             vy = 0.0;
             if(rand()%2) vx = -vx;
             ball.setPosition(sf::Vector2f(WIDTH/2-R, HEIGHT/2-R));
-            score_txt[0].setString(to_string(score[0]));
+            score_txt[0].setString(std::to_string(score[0]));
         }
         // + pkt dla prawego
         if( _x <= 0 )
@@ -228,7 +229,7 @@ int main()
             vy = 0.0;
             if(rand()%2) vx = -vx;
             ball.setPosition(sf::Vector2f(WIDTH/2-R, HEIGHT/2-R));
-            score_txt[1].setString(to_string(score[1]));
+            score_txt[1].setString(std::to_string(score[1]));
         }
 
         //rysuje
