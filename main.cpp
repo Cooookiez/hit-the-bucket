@@ -85,9 +85,7 @@ int main()
 
     // pierwszy strzal
     float vx = 12.0, vy = 0.0;
-    if(rand()%2){
-        vx = -vx;
-    }
+    if(rand()%2) vx = -vx;
 
     // kula
     sf::CircleShape ball;
@@ -154,7 +152,7 @@ int main()
         // odbija kule jesli trafi na tarcze
         _x = ball.getPosition().x;
         _y = ball.getPosition().y;
-        cout << _x << "\t" << _y <<  "\t|\t" << vx << "\t" << vy << "\t" << endl;
+        // cout << _x << "\t" << _y <<  "\t|\t" << vx << "\t" << vy << "\t" << endl;
         _x += vx;
         _y += vy;
         ball.setPosition(sf::Vector2f(_x, _y));
@@ -179,15 +177,37 @@ int main()
         }
 
         // odbija pilke jesli trafi na gurna lub dolna krawec
-        if( _y < 0 )
+        if( _y < UI_TOP_HEIGHT )
         {
             _y = 0;
             vy *= -1;
         }
-        else if( _y > HEIGHT - 2*R )
+        else if( _y > HEIGHT - 2*R - UI_BOT_HEIGHT)
         {
             _y = HEIGHT - 2*R;
             vy *= -1;
+        }
+
+        // restartuje pilke i nalicza pkt jestli trafi w sciane
+        // + pkt dla lewego
+        if( _x >= HEIGHT - 2*R )
+        {
+            score[0]++;
+            vx = 12.0;
+            vy = 0.0;
+            if(rand()%2) vx = -vx;
+            ball.setPosition(sf::Vector2f(WIDTH/2-R, HEIGHT/2-R));
+            score_txt[0].setString(to_string(score[0]));
+        }
+        // + pkt dla prawego
+        if( _x <= 0 )
+        {
+            score[1]++;
+            vx = 12.0;
+            vy = 0.0;
+            if(rand()%2) vx = -vx;
+            ball.setPosition(sf::Vector2f(WIDTH/2-R, HEIGHT/2-R));
+            score_txt[1].setString(to_string(score[1]));
         }
 
         //rysuje
