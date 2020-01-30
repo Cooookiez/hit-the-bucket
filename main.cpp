@@ -15,7 +15,7 @@ int main()
     const int HEIGHT = 1000;
     const float UI_TOP_HEIGHT = 50;
     const float UI_BOT_HEIGHT = 50;
-    const int R = 30; //promien kuli (strzały)
+    const int R = 50; //promien kuli (strzały)
 
     int _i;
     float _x, _y, tmp_vx, tmp_vy, tg;
@@ -38,6 +38,10 @@ int main()
     sf::Texture sea_texture;
     sea_texture.setSmooth(true);
     sea_texture.loadFromFile("./hit-the-bucket/assets/images/main_background.png");
+
+    sf::Texture tornado_texture;
+    tornado_texture.setSmooth(true);
+    tornado_texture.loadFromFile("./hit-the-bucket/assets/images/tornado.png");
 
     sf::Texture ship_left_texture;
     ship_left_texture.setSmooth(true);
@@ -106,14 +110,15 @@ int main()
     platforma[1].setTexture(&ship_right_texture);
 
     // pierwszy strzal
-    float vx = 12.0, vy = 0.0;
+    float vx = 8.0, vy = 0.0;
     if(rand()%2) vx = -vx;
 
     // kula
     sf::CircleShape ball;
     ball.setRadius(R);
-    ball.setFillColor(sf::Color::Blue);
+    // ball.setFillColor(sf::Color::Blue);
     ball.setPosition(sf::Vector2f(WIDTH/2-R, HEIGHT/2-R));
+    ball.setTexture(&tornado_texture);
 
     while( window.isOpen() )
     {
@@ -184,8 +189,8 @@ int main()
             ball.setPosition(sf::Vector2f(margin + R, _y));
             vx *= -1;
             vy += rand()%21-10;
-            vy = vy > 15 ? 15:vy;
-            vy = vy < -15 ? -15:vy;
+            vy = vy > 10 ? 10:vy;
+            vy = vy < -10 ? -10:vy;
 
         }
         // prawy
@@ -194,8 +199,8 @@ int main()
             ball.setPosition(sf::Vector2f(WIDTH - p_width - margin - 2*R, _y));
             vx *= -1;
             vy += rand()%21-10;
-            vy = vy > 15 ? 15:vy;
-            vy = vy < -15 ? -15:vy;
+            vy = vy > 10 ? 10:vy;
+            vy = vy < -10 ? -10:vy;
         }
 
         // odbija pilke jesli trafi na gurna lub dolna krawec
