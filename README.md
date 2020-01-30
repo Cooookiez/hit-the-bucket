@@ -8,11 +8,11 @@ Złe tornado pojawiło się na środku moza i mknie w stronę **TWOICH** Statkó
 
 ## Instalacja
 
-1. Skopjować pliki z folderu `assets/` do `/hit-the-bucket/assets/` (w folderze domowym)
+1. Skopiować pliki z folderu `assets/` do `/hit-the-bucket/assets/` (w folderze domowym)
 2. Mieć zainstalowanego cmake (`sudo apt install cmake` dla ubuntu, lub `sudo brew install cmake` dla OSX)
-3. odpali **cmake** (`cmake CMakeLists.txt`) będąc w folderze zawierającym ten plik
-4. odpalic **make** (poprostu `make` będąc całyczas w tym samym folderze)
-5. pojawi się plik wykonywalny **Hit-The-Bucket** który mona odpali i będzie działała gra 👍
+3. Odpalić **cmake** (`cmake CMakeLists.txt`) będąc w folderze zawierającym ten plik
+4. Odpalić **make** (poprostu `make` będąc całyczas w tym samym folderze)
+5. Po chwili pojawi się plik wykonywalny **Hit-The-Bucket** który można odpalić. Dopiero wówczas gra będzie działała 👍
 
 ## Załozenia
 
@@ -22,14 +22,14 @@ Złe tornado pojawiło się na środku moza i mknie w stronę **TWOICH** Statkó
 
 ## Odpalenie z konsoli (bez cmake i juz nie działa)
 
-Komendy pokoleji
+Komendy pokolei
 ~~~bash
 g++ -c cz1.cpp
 g++ cz1.o -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
 ./sfml-app
 ~~~
 
-lub w jednej lini
+lub w jednej linii
 ~~~bash
 g++ -c main.cpp && g++ main.o -o hit-the-bucket -lsfml-graphics -lsfml-window -lsfml-system && ./hit-the-bucket
 ~~~
