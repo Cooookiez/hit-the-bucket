@@ -9,7 +9,7 @@ Złe tornado pojawiło się na środku moza i mknie w stronę **TWOICH** Statkó
 ## Instalacja
 
 1. Skopjować pliki z folderu `assets/` do `/hit-the-bucket/assets/` (w folderze domowym)
-2. Mieć zainstalowanego cmake (`sudo apt install cmake` dla ubuntu, lub `sudo brew install cmake` dla OSX)
+2. Mieć zainstalowanego cmake (`sudo apt install cmake` dla ubuntu, lub `brew install cmake` dla OSX)
 3. odpali **cmake** (`cmake CMakeLists.txt`) będąc w folderze zawierającym ten plik
 4. odpalic **make** (poprostu `make` będąc całyczas w tym samym folderze)
 5. pojawi się plik wykonywalny **Hit-The-Bucket** który mona odpali i będzie działała gra 👍
