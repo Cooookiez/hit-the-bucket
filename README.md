@@ -16,9 +16,9 @@ Złe tornado pojawiło się na środku moza i mknie w stronę **TWOICH** Statkó
 
 ## Załozenia
 
-- [*] Versja c++: 17
-- [*] jest cmake
-- [*] są statki
+- [x] Versja c++: 17
+- [x] jest cmake
+- [x] są statki
 
 ## Odpalenie z konsoli (bez cmake i juz nie działa)
 

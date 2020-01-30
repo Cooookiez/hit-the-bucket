@@ -129,6 +129,19 @@ int main()
             // jesli escape lub przyciksk zamkniecia okna
             if( e.type == sf::Event::Closed || (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Escape) )
                 window.close();
+
+            // restart game
+            if( e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::R )
+            {
+                vx = 12.0;
+                vy = 0.0;
+                if(rand()%2) vx = -vx;
+                ball.setPosition(sf::Vector2f(WIDTH/2-R, HEIGHT/2-R));
+                score[0] = 0;
+                score[1] = 0;
+                score_txt[0].setString(std::to_string(score[0]));
+                score_txt[1].setString(std::to_string(score[1]));
+            }
                 
         }
 
