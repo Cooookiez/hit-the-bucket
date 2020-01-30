@@ -15,15 +15,15 @@ int main()
     const int HEIGHT = 1000;
     const float UI_TOP_HEIGHT = 50;
     const float UI_BOT_HEIGHT = 50;
-    const int R = 50; //promien kuli (strzały)
+    const int R = 50; //promień kuli (strzały)
 
     int _i;
     float _x, _y, tmp_vx, tmp_vy, tg;
 
-    int p_width = 60; // szerokosc platformy (tarczy)
-    int p_hieght = 300; // wysokosc platformy (tarczy)
-    float p_dx = 12; // szypkosc platform (tarczy)
-    int margin = 75; // odleglość platrofmy (tarczy) od sciany (brzegu)
+    int p_width = 60; // szerokość platformy (tarczy)
+    int p_hieght = 300; // wysokość platformy (tarczy)
+    float p_dx = 12; // szybkość platform (tarczy)
+    int margin = 75; // odleglość platformy (tarczy) od ściany (brzegu)
     int score[2] = {0, 0};
 
     sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Hit The Bucket");
@@ -51,13 +51,13 @@ int main()
     ship_right_texture.setSmooth(true);
     ship_right_texture.loadFromFile("./hit-the-bucket/assets/images/statek-prawy.png");
 
-    // sea
+    // sea/morze
     sf::RectangleShape sea;
     sea.setPosition(sf::Vector2f(0, UI_TOP_HEIGHT));
     sea.setSize(sf::Vector2f(WIDTH, HEIGHT - UI_TOP_HEIGHT - UI_BOT_HEIGHT));
     sea.setTexture(&sea_texture);
 
-    // UI gurne
+    // UI górne
     sf::RectangleShape ui_top;
     ui_top.setPosition(sf::Vector2f(0, 0));
     ui_top.setSize(sf::Vector2f(WIDTH, UI_TOP_HEIGHT));
@@ -109,7 +109,7 @@ int main()
     platforma[1].setSize(sf::Vector2f(p_width, p_hieght));
     platforma[1].setTexture(&ship_right_texture);
 
-    // pierwszy strzal
+    // pierwszy strzał
     float vx = 8.0, vy = 0.0;
     if(rand()%2) vx = -vx;
 
@@ -122,11 +122,11 @@ int main()
 
     while( window.isOpen() )
     {
-        // czy zamknac program
+        // czy zamknać program
         sf::Event e;
         while( window.pollEvent(e) )
         {
-            // jesli escape lub przyciksk zamkniecia okna
+            // jeśli escape lub przyciksk zamkniecia okna
             if( e.type == sf::Event::Closed || (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Escape) )
                 window.close();
 
@@ -189,7 +189,7 @@ int main()
             platforma[1].setPosition(sf::Vector2f(_x, _y));
         }
         
-        // odbija kule jesli trafi na tarcze
+        // odbija kulę jeśli trafi na tarcze
         _x = ball.getPosition().x;
         _y = ball.getPosition().y;
         // cout << _x << "\t" << _y <<  "\t|\t" << vx << "\t" << vy << "\t" << endl;
@@ -216,7 +216,7 @@ int main()
             vy = vy < -10 ? -10:vy;
         }
 
-        // odbija pilke jesli trafi na gurna lub dolna krawec
+        // odbija piłke jeśli trafi na górna lub dolna krawędź
         if( _y < UI_TOP_HEIGHT )
         {
             _y = 0;
@@ -228,7 +228,7 @@ int main()
             vy *= -1;
         }
 
-        // restartuje pilke i nalicza pkt jestli trafi w sciane
+        // restartuje piłkę i nalicza pkt jeśli trafi w ścianę
         // + pkt dla lewego
         if( _x >= HEIGHT - 2*R )
         {
