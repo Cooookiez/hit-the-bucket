@@ -15,13 +15,13 @@ int main()
     const int HEIGHT = 1000;
     const float UI_TOP_HEIGHT = 50;
     const float UI_BOT_HEIGHT = 50;
-    const int R = 50; //promien kuli (strzały)
+    const int R = 20; //promien kuli (strzały)
 
     int _i;
     float _x, _y, tmp_vx, tmp_vy, tg;
 
     int p_width = 60; // szerokosc platformy (tarczy)
-    int p_hieght = 300; // wysokosc platformy (tarczy)
+    int p_hieght = 200; // wysokosc platformy (tarczy)
     float p_dx = 12; // szypkosc platform (tarczy)
     int margin = 75; // odleglość platrofmy (tarczy) od sciany (brzegu)
     int score[2] = {0, 0};
@@ -30,26 +30,26 @@ int main()
     window.setFramerateLimit(60);
 
     sf::Font roboto;
-    roboto.loadFromFile("./hit-the-bucket/assets/fonts/Roboto-Regular.ttf");
+    roboto.loadFromFile("./assets/fonts/Roboto-Regular.ttf");
 
     std::cout << "Current path is " << std::filesystem::current_path() << '\n';
 
     // textury
     sf::Texture sea_texture;
     sea_texture.setSmooth(true);
-    sea_texture.loadFromFile("./hit-the-bucket/assets/images/main_background.png");
+    sea_texture.loadFromFile("./assets/images/main_background.png");
 
     sf::Texture tornado_texture;
     tornado_texture.setSmooth(true);
-    tornado_texture.loadFromFile("./hit-the-bucket/assets/images/tornado.png");
+    tornado_texture.loadFromFile("./assets/images/tornado.png");
 
     sf::Texture ship_left_texture;
     ship_left_texture.setSmooth(true);
-    ship_left_texture.loadFromFile("./hit-the-bucket/assets/images/statek-lewy.png");
+    ship_left_texture.loadFromFile("./assets/images/statek-lewy.png");
 
     sf::Texture ship_right_texture;
     ship_right_texture.setSmooth(true);
-    ship_right_texture.loadFromFile("./hit-the-bucket/assets/images/statek-prawy.png");
+    ship_right_texture.loadFromFile("./assets/images/statek-prawy.png");
 
     // sea
     sf::RectangleShape sea;
@@ -110,7 +110,7 @@ int main()
     platforma[1].setTexture(&ship_right_texture);
 
     // pierwszy strzal
-    float vx = 8.0, vy = 0.0;
+    float vx = 12.0, vy = 0.0;
     if(rand()%2) vx = -vx;
 
     // kula
