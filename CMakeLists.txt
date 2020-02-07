@@ -13,4 +13,8 @@ add_executable(Hit-The-Bucket main.cpp)
 
 target_link_libraries(Hit-The-Bucket sfml-graphics sfml-window)
 
-# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR})
+add_custom_target(run
+    COMMAND Hit-The-Bucket
+    DEPENDS Hit-The-Bucket
+    WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
+)

@@ -15,8 +15,8 @@ Złe tornado pojawiło się na środku moza i mknie w stronę **TWOICH** Statkó
 ## Instalacja
 
 1. W konsoli otworzyc folder z grą (np. `~/downloads/Hit-the-bucket/`)
-2. Wpisac `cmake CMakeLists.txt & make` zeby zainstalowac
-3. wpisac `./Hit-The-Bucket` zeby zagrac
+2. Wpisac `cmake CMakeLists.txt` zeby "zainstalowac" program
+3. I `make run` zeby zagrac
 
 ## Załozenia
 
@@ -29,7 +29,8 @@ Złe tornado pojawiło się na środku moza i mknie w stronę **TWOICH** Statkó
 ### cmake & make
 
 ```bash
-cmake CMakeLists.txt & make & ./Hit-The-Bucket
+cmake CMakeLists.txt
+make run
 ```
 
 ### samemu
