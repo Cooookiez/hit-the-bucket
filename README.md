@@ -6,13 +6,17 @@ AKA prosta gra z udziałem statków 🚤
 
 Złe tornado pojawiło się na środku moza i mknie w stronę **TWOICH** Statków. Ale się nie martw! Twój **Statek–Obrońca** jest wstanie odbic tornado w stronę twojego przeciwnika!
 
+## Wymagania
+
+- **C++ 17** or grater
+- **SFML 2.5** or grater
+- **CMake 3.5** or grater
+
 ## Instalacja
 
-1. Skopiować pliki z folderu `assets/` do `/hit-the-bucket/assets/` (w folderze domowym)
-2. Mieć zainstalowanego cmake (`sudo apt install cmake` dla ubuntu, lub `sudo brew install cmake` dla OSX)
-3. Odpalić **cmake** (`cmake CMakeLists.txt`) będąc w folderze zawierającym ten plik
-4. Odpalić **make** (poprostu `make` będąc całyczas w tym samym folderze)
-5. Po chwili pojawi się plik wykonywalny **Hit-The-Bucket** który można odpalić. Dopiero wówczas gra będzie działała 👍
+1. W konsoli otworzyc folder z grą (np. `~/downloads/Hit-the-bucket/`)
+2. Wpisac `cmake CMakeLists.txt & make` zeby zainstalowac
+3. wpisac `./Hit-The-Bucket` zeby zagrac
 
 ## Załozenia
 
@@ -20,7 +24,15 @@ Złe tornado pojawiło się na środku moza i mknie w stronę **TWOICH** Statkó
 - [x] jest cmake
 - [x] są statki
 
-## Odpalenie z konsoli (bez cmake i juz nie działa)
+## Odpalenie z konsoli
+
+### cmake & make
+
+```bash
+cmake CMakeLists.txt & make & ./Hit-The-Bucket
+```
+
+### samemu
 
 Komendy pokolei
 ~~~bash
